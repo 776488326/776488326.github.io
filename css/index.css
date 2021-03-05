@@ -1,0 +1,256 @@
+/* 背景设置 */
+html,
+body {
+    margin: 0;
+    padding: 0px;
+    font-family: arial, microsoft yahei;
+    color: #fefefe
+}
+
+body {
+    position: relative;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* 设置属性过渡 */
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    /* 以上为兼容设置 */
+    transition: all .3s ease-out;
+    /*依次为：过渡的属性，过渡时间，过渡曲线，延迟开始时间 */
+    background-color: #002878;
+    overflow: hidden;
+}
+
+.drive,
+.shadows {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.drive li {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, .5) inset;
+    width: 100vw;
+    height: 100vh;
+    /* 绑定动画时间，曲线，播放次数 */
+    animation: drive 10s linear infinite;
+    list-style: none;
+}
+
+.shadows li {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    animation: shadows 10s linear infinite;
+    list-style: none;
+}
+
+.drive li:nth-child(1) {
+    animation-delay: 0
+}
+
+/* 可以为负值动画跳过1秒进入动画周期 */
+.drive li:nth-child(2) {
+    animation-delay: -1s
+}
+
+.drive li:nth-child(3) {
+    animation-delay: -2s
+}
+
+.drive li:nth-child(4) {
+    animation-delay: -3s
+}
+
+.drive li:nth-child(5) {
+    animation-delay: -4s
+}
+
+.drive li:nth-child(6) {
+    animation-delay: -5s
+}
+
+.drive li:nth-child(7) {
+    animation-delay: -6s
+}
+
+.drive li:nth-child(8) {
+    animation-delay: -7s
+}
+
+.drive li:nth-child(9) {
+    animation-delay: -8s
+}
+
+.drive li:nth-child(10) {
+    animation-delay: -9s
+}
+
+/* 设置每个元素的延迟时间 */
+.shadows li:nth-child(1) {
+    animation-delay: 0
+}
+
+.shadows li:nth-child(2) {
+    animation-delay: -1s
+}
+
+.shadows li:nth-child(3) {
+    animation-delay: -2s
+}
+
+.shadows li:nth-child(4) {
+    animation-delay: -3s
+}
+
+.shadows li:nth-child(5) {
+    animation-delay: -4s
+}
+
+.shadows li:nth-child(6) {
+    animation-delay: -5s
+}
+
+.shadows li:nth-child(7) {
+    animation-delay: -6s
+}
+
+.shadows li:nth-child(8) {
+    animation-delay: -7s
+}
+
+.shadows li:nth-child(9) {
+    animation-delay: -8s
+}
+
+.shadows li:nth-child(10) {
+    animation-delay: -9s
+}
+
+/* 制作动画 */
+@keyframes drive {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(-45deg)
+    }
+
+    /* 设置缩放和旋转 */
+    100% {
+        transform: translate(-50%, -50%) scale(1.05) rotate(0deg)
+    }
+}
+
+@keyframes shadows {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(-45deg);
+        opacity: .25
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.05) rotate(0deg);
+        opacity: 0
+    }
+}
+
+/* 导航栏 */
+nav{
+    position: fixed;
+    width: 100%;
+    top: 40%;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 1vw;
+}
+nav ul li {
+    list-style: none;
+    width: 8vw;
+    height: 4vw;
+    border-radius: 2vw;
+    text-align: center;
+    line-height: 4vw;
+    background-color: rgb(55, 100, 200, 0.5);
+    color: rgb(0, 255, 0);
+    animation: change_max 2s ease-out 1;
+    opacity: 0.5;
+    cursor: pointer;
+}
+@keyframes change_max{
+    0%{
+        background-color: rgb(55, 100, 200,1);
+        transform: scale(0);
+    }
+    100%{
+        background-color: rgb(55, 100, 200, 0.5);
+        transform: scale(1);
+    }
+}
+/* 主体内容 */
+main{
+    position: fixed;
+    left: 50%;
+    top: 20%;  
+    transform: translate(-50%,0);
+    font-size: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main span{
+    flex: 1;
+    color: #fff;
+    animation: jump 2s ease-out 1;
+}
+@keyframes jump{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* 底部 */
+footer {
+    position: fixed;
+    top: 90%;
+    width: 100%;
+}
+footer .copyright,
+.relate{
+    position: relative;
+    font-size: 18px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+footer .relate span{
+    padding: 2vw;
+    cursor: pointer;
+}
+footer .relate span:hover::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    top: -15vw;
+    left: 45.5vw;
+    background:url(../img/relate.png) no-repeat;
+    background-size: contain;
+}
+
