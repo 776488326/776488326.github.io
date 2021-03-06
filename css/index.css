@@ -163,7 +163,7 @@ body {
     }
 }
 
-/* 导航栏 */
+/* 标签 */
 nav{
     position: fixed;
     width: 100%;
@@ -198,7 +198,7 @@ nav ul li {
         transform: scale(1);
     }
 }
-/* 主体内容 */
+/* 标题 */
 main{
     position: fixed;
     left: 50%;
@@ -224,7 +224,29 @@ main span{
         opacity: 1;
     }
 }
-/* 底部 */
+/* 音乐 */
+.music{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top: 60%;
+    left: 50%;
+    width: 30vw;
+    height: 25vh;
+    padding: 1vh;
+    transform: translate(-50%,0);
+    background-color: rgba(255, 255, 255, .15);
+}
+.music .banner{
+    flex: 3;
+    background: url(../img/1.jpg) no-repeat center center;
+}
+.music audio{
+    flex: 1;
+    width: 100%;
+}
+/* 版权 */
 footer {
     position: fixed;
     top: 90%;
